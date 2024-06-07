@@ -34,7 +34,7 @@ namespace BerkutSignalrBroadcaster
         }
 
         [Function("negotiate")]
-        public static IActionResult Negotiate([HttpTrigger(AuthorizationLevel.Anonymous, "get")] HttpRequest req,
+        public static IActionResult Negotiate([HttpTrigger(AuthorizationLevel.Anonymous, "post")] HttpRequest req,
         [SignalRConnectionInfoInput(HubName = "lampstatus")] string connectionInfo) =>
             new OkObjectResult(connectionInfo);
     }
